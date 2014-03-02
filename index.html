@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Chat with socket.io and node.js</title>
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+jQuery(function($){
+  var socket = io.connect("http://192.168.1.7:3000");
+  socket.on('connect', function(){
+    socket.emit('adduser', prompt('Add user name: '));
+  });
+
+});
+	</script>
+</body>
+</html>
